@@ -1,5 +1,6 @@
 // import React from 'react'
 import AboutBg from "../../public/about-image.png";
+import Service from "../components/Service";
 
 const About = () => {
   return (
@@ -26,6 +27,7 @@ const About = () => {
           <img src={AboutBg} alt="" />
         </div>
       </div>
+      <Service />
     </div>
   );
 };
