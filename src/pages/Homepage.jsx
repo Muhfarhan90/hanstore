@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import Button from "../components/Button";
 
@@ -19,7 +18,6 @@ const Homepage = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
         {produk.map((products) => {
           return <Card key={products.id} product={products} />;
