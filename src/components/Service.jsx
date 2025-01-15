@@ -5,7 +5,7 @@ const Service = ({ icon, title, desc }) => {
   return (
     <div>
         {/* Card 1 */}
-        <div className="flex flex-col gap-10 items-center">
+        <div className="flex flex-col gap-6 items-center">
           <div className="p-4 bg-gray-300 rounded-full">
             <div className="p-4 bg-black rounded-full">
               <img src={icon} alt="icon" />

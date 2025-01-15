@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import Footer from "../components/Footer";
 
 const Homepage = () => {
   const [produk, setProduk] = useState([]);
@@ -18,13 +19,19 @@ const Homepage = () => {
 
   return (
     <div>
-      <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
-        {produk.map((products) => {
-          return <Card key={products.id} product={products} />;
-        })}
+      <div>
+        <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
+          {produk.map((products) => {
+            return <Card key={products.id} product={products} />;
+          })}
+        </div>
+        <div className="flex justify-center mt-4">
+          <Button btnName="View All Products" className="text-center" />
+        </div>
       </div>
-      <div className="flex justify-center mt-4">
-        <Button btnName="View All Products" className="text-center" />
+      {/* Footer */}
+      <div className="mt-[140px]">
+        <Footer />
       </div>
     </div>
   );
