@@ -1,37 +1,50 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import Footer from "../components/Footer";
+import axios from "axios";
 
 const Homepage = () => {
   const [produk, setProduk] = useState([]);
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await fetch(
-        "https://fakestoreapi.in/api/products?limit=10"
-      );
-      const data = await response.json();
-      setProduk(data.products);
-    };
-    getData();
+    axios
+      .get("https://fakestoreapi.in/api/products?limit=10")
+      .then((response) => {
+        setProduk(response.data.products);
+      });
   }, []);
 
+  console.log(produk);
   return (
     <div>
       <div>
-        <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
-          {produk.map((products) => {
-            return <Card key={products.id} product={products} />;
-          })}
-        </div>
+        {produk ? (
+          <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
+            {produk.map((products) => {
+              return <Card key={products.id} product={products} />;
+            })}
+          </div>
+        ) : (
+          // <ClipLoader
+          //   color={color}
+          //   loading={loading}
+          //   cssOverride={override}
+          //   size={150}
+          //   aria-label="Loading Spinner"
+          //   data-testid="loader"
+          // />
+          <div>
+            <p className="text-5xl font-semibold">Loading...</p>
+          </div>
+        )}
+
         <div className="flex justify-center mt-4">
-          <Button btnName="View All Products" className="text-center" />
+          <Button
+            btnName="View All Products"
+            jenis="primary"
+            className="text-center"
+          />
         </div>
-      </div>
-      {/* Footer */}
-      <div className="mt-[140px]">
-        <Footer />
       </div>
     </div>
   );

@@ -13,7 +13,6 @@ import shop from "../../public/icon_shop.svg";
 // import sale from "../../public/icon-Sale.svg";
 import money from "../../public/icon-Moneybag.svg";
 import bag from "../../public/icon-Shopping bag.svg";
-import Footer from "../components/Footer";
 const About = () => {
   return (
     <div className="">
@@ -81,10 +80,7 @@ const About = () => {
           desc="We reurn money within 30 days"
         />
       </div>
-      {/* Footer */}
-      <div className="mt-[140px]">
-        <Footer />
-      </div>
+    
     </div>
   );
 };

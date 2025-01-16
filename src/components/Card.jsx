@@ -2,9 +2,13 @@
 // import React from 'react'
 import favorite from "../../public/favorite.svg";
 import cart from "../../public/cart.svg";
+import { Link } from "react-router-dom";
 const Card = ({ product }) => {
   return (
-    <a href="" className="w-[270px] flex flex-col flex-shrink-0 border border-black rounded-xl shadow-xl transition-transform hover:scale-105">
+    <Link
+      to={`/products/${product.id}`}
+      className="w-[270px] flex flex-col flex-shrink-0 border border-black rounded-xl shadow-xl transition-transform hover:scale-105"
+    >
       <div className="mb-4 relative ">
         <img
           src={product.image}
@@ -38,7 +42,7 @@ const Card = ({ product }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
