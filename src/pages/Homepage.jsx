@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import axios from "axios";
+import Loading from "../loading";
 
 const Homepage = () => {
   const [produk, setProduk] = useState([]);
@@ -25,17 +26,7 @@ const Homepage = () => {
             })}
           </div>
         ) : (
-          // <ClipLoader
-          //   color={color}
-          //   loading={loading}
-          //   cssOverride={override}
-          //   size={150}
-          //   aria-label="Loading Spinner"
-          //   data-testid="loader"
-          // />
-          <div>
-            <p className="text-5xl font-semibold">Loading...</p>
-          </div>
+          <Loading />
         )}
 
         <div className="flex justify-center mt-4">

@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Detail from "../components/Detail";
+import Loading from "../loading";
 const ProductDetail = () => {
   const { id } = useParams();
   const [produk, setProduk] = useState(null);
@@ -30,7 +31,7 @@ const ProductDetail = () => {
           warna={produk.product.color}
         />
       ) : (
-        <p>Loading...</p>
+        <Loading />
       )}
     </div>
   );
