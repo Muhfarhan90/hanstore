@@ -21,10 +21,10 @@ const Card = ({ product }) => {
           </div>
         ) : null}
         <div className="absolute top-2 right-3 flex flex-col gap-2">
-          <button className="rounded-full p-2 bg-gray-200">
+          <button className="rounded-full p-2 bg-gray-200 hover:bg-red-100">
             <img src={favorite} alt="" className="w-6" />
           </button>
-          <button className="rounded-full p-2 bg-gray-200">
+          <button className="rounded-full p-2 bg-gray-200 hover:bg-red-100">
             <img src={cart} alt="" className="w-6" />
           </button>
         </div>
@@ -34,10 +34,10 @@ const Card = ({ product }) => {
         <h1 className="line-clamp-3 text-xl">{product.title}</h1>
         <p className="text-red-500 text-xl">${product.price}</p>
         <div className="flex gap-2 items-center">
-          <div className="px-2 py-1 border border-green-500 rounded-xl ">
+          <div className="px-2 py-1 border border-green-500 rounded-xl hover:bg-green-100 ">
             <p className="text-green-500">{product.category}</p>
           </div>
-          <div className="px-2 py-1 border border-green-500 rounded-xl ">
+          <div className="px-2 py-1 border border-green-500 rounded-xl hover:bg-green-100 ">
             <p className="text-green-500">{product.brand}</p>
           </div>
         </div>

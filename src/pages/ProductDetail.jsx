@@ -31,7 +31,9 @@ const ProductDetail = () => {
           warna={produk.product.color}
         />
       ) : (
-        <Loading />
+        <div className="text-center justify-center flex mt-20">
+          <Loading type={"spin"} color={"#000"} />
+        </div>
       )}
     </div>
   );

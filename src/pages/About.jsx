@@ -17,7 +17,7 @@ const About = () => {
   return (
     <div className="">
       {/* Hero */}
-      <div className="container mx-auto flex items-center gap-[75px] py-[100px] relative">
+      <div className="container mx-auto flex items-center gap-[75px] py-[50px] relative">
         <div className="w-[50%]">
           <h1 className="text-6xl font-semibold mb-12">Our Story</h1>
           <div className="flex flex-col gap-6 text-base font-normal">

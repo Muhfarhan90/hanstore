@@ -1,26 +1,23 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 import axios from "axios";
 import Loading from "../loading";
-import { Link } from "react-router";
 
-const Homepage = () => {
+const Products = () => {
   const [produk, setProduk] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.in/api/products?limit=10")
-      .then((response) => {
-        setProduk(response.data.products);
-      });
+    axios.get("https://fakestoreapi.in/api/products").then((response) => {
+      setProduk(response.data.products);
+    });
   }, []);
 
   return (
-    <div className="">
+    <div>
       <div>
         {produk ? (
-          <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
+          <div className="flex flex-wrap whitespace-normal gap-8 p-20">
             {produk.map((products) => {
               return <Card key={products.id} product={products} />;
             })}
@@ -31,15 +28,8 @@ const Homepage = () => {
           </div>
         )}
       </div>
-      <Link to={"/products"} className="flex justify-center mt-4">
-        <Button
-          btnName="View All Products"
-          jenis="primary"
-          className="text-center"
-        />
-      </Link>
     </div>
   );
 };
 
-export default Homepage;
+export default Products;
