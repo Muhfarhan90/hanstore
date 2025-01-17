@@ -13,7 +13,7 @@ const Card = ({ product }) => {
         <img
           src={product.image}
           alt=""
-          className="mx-auto my-auto w-[270px] h-[250px] bg-cover rounded-xl"
+          className="mx-auto my-auto max-w-full h-[200px] object-contain bg-cover rounded-xl"
         />
         {product.discount ? (
           <div className="absolute top-2 left-3 py-1 px-2 bg-red-500 rounded-lg">

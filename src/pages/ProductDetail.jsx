@@ -19,7 +19,6 @@ const ProductDetail = () => {
     }
   }, [id]);
 
-  console.log(produk);
   return (
     <div>
       {produk ? (

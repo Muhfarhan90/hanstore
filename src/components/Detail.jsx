@@ -22,12 +22,12 @@ const Detail = ({ gambar, title, desc, price, warna }) => {
     setCount(count - 1);
   };
   return (
-    <div className="flex items-center justify-center gap-10 mx-auto container">
-      <div className="">
+    <div className="flex items-center justify-center gap-10 mx-auto container pt-20">
+      <div className="w-[500px] h-[600px] flex">
         <img
           src={gambar}
           alt={title}
-          className="w-[500px] h-[600px] bg-cover"
+          className="max-w-full object-contain"
         />
       </div>
       <div className="flex flex-col gap-4 w-3/5">

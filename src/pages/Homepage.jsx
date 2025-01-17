@@ -4,23 +4,31 @@ import Button from "../components/Button";
 import axios from "axios";
 import Loading from "../loading";
 import { Link } from "react-router";
+import ProductCategory from "../components/ProductCategory";
+// import ProductByCategory from "../components/ProductByCategory";
 
 const Homepage = () => {
   const [produk, setProduk] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.in/api/products?limit=10")
-      .then((response) => {
-        setProduk(response.data.products);
-      });
+    const getProducts = async () => {
+      await axios
+        .get("https://fakestoreapi.in/api/products?limit=10")
+        .then((response) => {
+          setProduk(response.data.products);
+        });
+    };
+    getProducts();
   }, []);
 
   return (
     <div className="">
-      <div>
+      <div className="pt-8">
+        <ProductCategory />
+      </div>
+      <div className="">
         {produk ? (
-          <div className="flex whitespace-normal gap-8 overflow-x-auto p-20">
+          <div className="flex whitespace-normal gap-8 overflow-x-auto p-12">
             {produk.map((products) => {
               return <Card key={products.id} product={products} />;
             })}
