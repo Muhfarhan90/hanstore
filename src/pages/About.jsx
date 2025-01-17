@@ -3,7 +3,7 @@ import AboutBg from "../../public/about-image.png";
 import Service from "../components/Service";
 import Stats from "../components/Stats";
 import delivery from "../../public/icon-delivery.svg";
-import cs from "../../public/icon-Customer Service.svg";
+import cs from "../../public/icon-CustomerService.svg";
 import secure from "../../public/icon-secure.svg";
 import Member from "../components/Member";
 import team1 from "../../public/team1.png";
